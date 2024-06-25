@@ -36,7 +36,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	fileServer := http.FileServer(http.Dir("./static"))
+	fileServer := http.FileServer(http.Dir("./templates"))
 	// Create a file server handler for serving static files from ./static directory
 	http.Handle("/", fileServer)            // Handle requests to root path with fileServer handler
 	http.HandleFunc("/form", formHandler)   // Handle requests to /form endpoint with formHandler function
