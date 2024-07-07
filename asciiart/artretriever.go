@@ -28,7 +28,7 @@ func ArtRetriever(s string, m map[rune][]string) (string, error) {
                     if asciiArt, ok := m[char]; ok {
                         result.WriteString(asciiArt[j])
                     } else {
-                        return "", fmt.Errorf("error! invalid input: %s", string(char))
+                        return "", fmt.Errorf("invalid input: %s", string(char))
                     }
                 }
                 result.WriteString("\n")
