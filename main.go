@@ -44,7 +44,11 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	asciiArtMap := asciiart.MapCreator(string(bannerContent))
+	asciiArtMap, err := asciiart.MapCreator(string(bannerContent))
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Error populating map: %v", err), http.StatusBadRequest)
+		return
+	}
 
 	inputText, err = asciiart.ValidateInput(inputText)
 	if err != nil {
