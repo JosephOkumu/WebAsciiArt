@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+
 	"webart/asciiart"
 )
 
@@ -23,6 +24,9 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	inputText := r.FormValue("text_input")
+	if strings.Contains(inputText, "\r\n") {
+		inputText = strings.ReplaceAll(inputText, "\r\n", "\n")
+	}
 	banner := r.FormValue("banner")
 
 	var bannerFile string
@@ -67,21 +71,34 @@ func formHandler(w http.ResponseWriter, r *http.Request) {
 
 // displayHandler handles displaying the generated ASCII art
 func displayHandler(w http.ResponseWriter, r *http.Request) {
-	asciiArtResult := r.URL.Query().Get("art")
+	// Retrieve the ASCII art from the URL query parameter
+	encodedArt := r.URL.Query().Get("art")
+
+	// Decode the URL-encoded ASCII art
+	asciiArtResult, err := url.QueryUnescape(encodedArt)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Error decoding ASCII art: %v", err), http.StatusInternalServerError)
+		return
+	}
+
+	// Replace newline characters with HTML <br> tags for proper display in HTML
 	asciiArtResult = strings.ReplaceAll(asciiArtResult, "\n", "<br>")
 
+	// Parse the HTML template file
 	tmpl, err := template.ParseFiles("templates/display.html")
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Error loading template: %v", err), http.StatusInternalServerError)
 		return
 	}
 
+	// Prepare data to pass to the template
 	data := struct {
-		Art template.HTML
+		Art template.HTML // Use template.HTML to ensure HTML is not escaped
 	}{
-		Art: template.HTML(asciiArtResult),
+		Art: template.HTML(asciiArtResult), // Convert string to template.HTML to prevent auto-escaping
 	}
 
+	// Execute the template with the data
 	if err := tmpl.Execute(w, data); err != nil {
 		http.Error(w, fmt.Sprintf("Error executing template: %v", err), http.StatusInternalServerError)
 	}
