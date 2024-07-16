@@ -1,69 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8"/>
-        <title>Ascii Art</title>
-        <style>
-            .form-container {
-                width: 50%;
-                margin: 0 auto;
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 10px;
-                background-color: #f9f9f9;
-            }
-            .form-container label {
-                display: block;
-                margin: 10px 0 5px;
-            }
-            .form-container textarea {
-                width: 100%;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-            }
-            .form-container .radio-group {
-                margin: 20px 0;
-            }
-            .form-container .radio-group input {
-                margin-right: 10px;
-            }
-            .form-container button {
-                display: block;
-                width: 100%;
-                padding: 10px;
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                font-size: 16px;
-            }
-            .form-container button:hover {
-                background-color: #45a034;
-            }         
-        </style>
-            </head>
-    <body>
-        <div class="form-container">
-            <form method="POST" action="/form">
-                <label for="text_input">Please enter some text below:</label>
-                <textarea id="text_input" name="text_input" cols="50" rows="4" placeholder="Enter your text here"></textarea>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Ascii Art</title>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <form method="POST" action="/form">
+            <label for="text_input">Please enter some text below:</label>
+            <textarea id="text_input" name="text_input" cols="50" rows="4" placeholder="Enter your text here"></textarea>
 
-                <div class="radio-group">
-                    <label>Select a banner:</label>
-                    <input type="radio" id="standard" name="banner" value="standard">
-                    <label for="standard">Standard</label><br>
+            <div class="radio-group">
+                <label>Select a banner:</label>
+                <input type="radio" id="standard" name="banner" value="standard">
+                <label for="standard">Standard</label><br>
 
-                    <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
-                    <label for="thinkertoy">Thinkertoy</label><br>
+                <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
+                <label for="thinkertoy">Thinkertoy</label><br>
 
-                    <input type="radio" id="shadow" name="banner" value="shadow">
-                    <label for="shadow">Shadow</label>
-                </div>
+                <input type="radio" id="shadow" name="banner" value="shadow">
+                <label for="shadow">Shadow</label>
+            </div>
 
-                <button type="submit" value="submit">Submit</button>
-            </form>
-        </div>
-    </body>
+            <button type="submit" value="submit">Submit</button>
+        </form>
+    </div>
+</body>
 </html>
