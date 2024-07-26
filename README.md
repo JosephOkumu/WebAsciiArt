@@ -1,4 +1,4 @@
-# Ascii-Art-Web
+# Web-Ascii-Art
 This program allows users to input text and select a banner format from a web interface. By clicking the "Convert to ASCII Art" button, the input text is transformed into an ASCII art graphical representation, which is then displayed on a new page.
 ## Documentation
 This section illustrates how to make use of this program.
