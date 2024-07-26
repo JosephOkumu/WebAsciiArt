@@ -1,0 +1,171 @@
+/* Reset box-sizing and set basic styles */
+html {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #D6EFD8; /* Body background color */
+  padding: 0;
+  margin: 0;
+}
+
+/* Apply padding to all elements */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Style main container */
+main {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+  min-width: 350px;
+  background-color: #B3E2A7; /* Container background color */
+  border: 1px solid #80cbc4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Center header text and style link */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header a {
+  text-decoration: none;
+  color: #333;
+  font-size: 24px;
+}
+
+/* Style form */
+form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+label {
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+}
+
+form textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form select {
+  width: 100%;
+  padding: 8px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  padding: 10px 20px;
+  color: #fff;  /* Change text color to white */
+  font-weight: bold;
+  border: 2px solid #16a085;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #16a085;  /* Set background color to green */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+  background-color: #12876c;  /* Darken green for hover effect */
+  border-color: #12876c;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style result display */
+article {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;  /* Change background color to light gray */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+article pre {
+  margin: 0;
+  font-size: 18px;
+  overflow: auto;
+}
+
+.error-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.error-container h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.error-container p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.error-container a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.error-container a:hover {
+  text-decoration: underline;
+}
+
+/* Back link styles */
+
+.back-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-link a {
+  display: inline-block;
+  color: #fff;  /* Change text color to white */
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid #16a085;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-color: #12876c;  /* Set background color to green */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-link a:hover {
+  background-color: #12876c;  /* Darken green for hover effect */
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
